@@ -1,0 +1,313 @@
+html {
+   font-size: 15px;
+   box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+body {
+   font-family: "Open Sans", sans-serif;
+   line-height: 1.5;
+   background: var(--clr-main-s);
+}
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   font-weight: 400;
+}
+ul li {
+   display: inline;
+   list-style: none;
+}
+a {
+   text-decoration: none;
+}
+
+.container {
+   width: 1200px;
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+.flex-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1rem;
+}
+.logo {
+   width: 110px;
+   height: 110px;
+}
+.logo-form {
+   width: 70px;
+   height: 70px;
+}
+
+.text {
+   font-size: 2rem;
+   color: #fff;
+   text-align: center;
+}
+
+.nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.nav ul li {
+   padding: 1rem;
+}
+.nav ul li a {
+   color: #ccc;
+   font-size: 18px;
+}
+.hamburger {
+   display: none;
+}
+
+.form {
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 700px;
+
+   background-color: rgb(230, 230, 230);
+   padding: 1rem;
+   border-radius: 2px;
+}
+.container-form {
+   width: 700px;
+   max-width: 100%;
+   margin: 0 auto;
+}
+
+.text-form {
+   font-size: 1.7rem;
+   text-align: center;
+}
+.form-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+/**** LOGIN FORM */
+input[type="text"],
+input[type="password"] {
+   width: 100%;
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   box-sizing: border-box;
+   border: none;
+   border-radius: 5px;
+   background: rgb(208, 208, 208);
+   font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+   outline: none;
+   box-shadow: 0 0 0 2px var(--clr-main);
+}
+
+.password-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: rgb(208, 208, 208);
+   height: 42px;
+   border-radius: 5px;
+   overflow: hidden;
+   padding-right: 15px;
+}
+
+.password-container:focus-within {
+   outline: none;
+   box-shadow: 0 0 0 2px var(--clr-main);
+}
+
+.password-container input:focus,
+.password-container input:active {
+   outline: none;
+   box-shadow: none;
+}
+
+.password-container svg {
+   height: 25px;
+   width: auto;
+   cursor: pointer;
+}
+
+svg#eyeClose {
+   display: none;
+}
+
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+   box-shadow: none;
+}
+
+label {
+   color: #000;
+}
+
+/*********** BUTTON */
+.btn-submit {
+   color: #fff;
+   font-size: 1.2rem;
+   cursor: pointer;
+   width: 100%;
+   height: 40px;
+   background: var(--clr-main-s2);
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   margin: 1rem 0;
+}
+
+/***** FOR MOBILE */
+@media (max-width: 778px) {
+   .flex-top {
+      padding: 0.5rem;
+   }
+   .logo {
+      width: 90px;
+      height: 90px;
+   }
+   .logo-form {
+      width: 60px;
+      height: 60px;
+   }
+
+   .text {
+      font-size: 1rem;
+   }
+   .nav {
+      display: none;
+   }
+   .hamburger {
+      display: block;
+   }
+   .form {
+      width: 350px;
+   }
+   .text-form {
+      font-size: 1rem;
+      padding: 1rem;
+   }
+   input[type="text"],
+   input[type="password"] {
+      padding: 10px 18px;
+      margin: 5px 0;
+   }
+}
+@media (max-width: 300px) {
+   .form {
+      width: 250px;
+   }
+   .text-form {
+      font-size: 1rem;
+      padding: 1rem;
+   }
+   input[type="text"],
+   input[type="password"] {
+      padding: 7px 12px;
+      margin: 4px 0;
+   }
+}
+
+.error {
+   background: var(--clr-red);
+   color: var(--clr-red-s);
+   width: 100%;
+   height: 40px;
+   font-size: 18px;
+   text-align: center;
+   line-height: 40px;
+}

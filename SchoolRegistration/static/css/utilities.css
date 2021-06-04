@@ -1,0 +1,18 @@
+:root {
+   --clr-main: #7474d4;
+   --clr-main-s1-t: #6060ae;
+   --clr-main-s: #33184b;
+   --clr-main-s2: #452164;
+   --clr-green: #3fd977;
+   --clr-yellow: #ffb619;
+   --clr-red: rgb(253, 164, 164);
+   --clr-red-s: rgb(248, 28, 28);
+   --clr-body: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+   width: 10px;
+}
+::-webkit-scrollbar-thumb {
+   background: #12081a;
+}

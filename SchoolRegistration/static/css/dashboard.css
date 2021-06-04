@@ -1,0 +1,430 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+}
+body {
+   overflow-x: hidden;
+}
+
+tr {
+   transition: background 100ms ease;
+   text-transform: capitalize;
+}
+
+.profile-image {
+   height: 50px;
+   min-width: 50px;
+   margin: 5px;
+   border-radius: 100vh;
+   font-size: 16px;
+   position: relative;
+   overflow: hidden;
+}
+.profile-image img {
+   z-index: 10;
+   position: absolute;
+   width: auto;
+   height: 100%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.profile-image h2 {
+   text-transform: uppercase;
+   text-align: center;
+   line-height: 50px;
+}
+
+.container {
+   position: relative;
+   width: 100%;
+}
+.navigation {
+   position: fixed;
+   width: 300px;
+   height: 100%;
+   background: var(--clr-main-s);
+   transition: 0.5s;
+   overflow: hidden;
+}
+.navigation.active {
+   width: 60px;
+}
+.navigation ul {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+.navigation ul li {
+   position: relative;
+   width: 100%;
+   list-style: none;
+}
+.navigation ul li:hover {
+   background: var(--clr-main);
+}
+.navigation ul li:nth-child(1) {
+   margin: 10px 0px;
+}
+.navigation ul li:nth-child(1):hover {
+   background: transparent;
+}
+.navigation ul li a {
+   position: relative;
+   display: block;
+   width: 100%;
+   display: flex;
+   text-decoration: none;
+   color: #fff;
+}
+.navigation ul li a .icon {
+   position: relative;
+   display: block;
+   min-width: 60px;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+}
+.navigation ul li a .icon .fa {
+   color: #fff;
+   font-size: 24px;
+}
+.navigation ul li a .title {
+   position: relative;
+   display: block;
+   padding: 0 10px;
+   height: 60px;
+   line-height: 60px;
+   white-space: nowrap;
+}
+iframe {
+   border: none;
+   overflow: hidden;
+}
+.main,
+.topbar {
+   transition: 0.5s;
+}
+.main {
+   position: absolute;
+   width: calc(100% - 300px);
+   left: 300px;
+   min-height: 100vh;
+   background: var(--clr-body);
+}
+.main.active {
+   width: calc(100% - 60px);
+   left: 60px;
+}
+.topbar {
+   width: 100%;
+   background: #fff;
+   height: 60px;
+   padding: 10px 3vw;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: sticky;
+   top: 0;
+   z-index: 100;
+   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+   margin-left: auto;
+}
+.topbar.active {
+   width: calc(100% - 60px);
+   left: 60px;
+}
+.toggle {
+   position: relative;
+   width: 60px;
+   height: 60px;
+   cursor: pointer;
+}
+.toggle::before {
+   content: "\f0c9";
+   font-family: fontAwesome;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   line-height: 60px;
+   font-size: 24px;
+   text-align: center;
+   color: #111;
+}
+.search {
+   position: relative;
+   height: 40px;
+   width: 40px;
+   border: 2px solid rgb(0, 0, 0);
+   border-radius: 40px;
+   transition: width 350ms ease-in;
+   cursor: pointer;
+}
+.search:focus-within {
+   width: 400px;
+}
+.search:hover {
+   width: 400px;
+}
+.search input {
+   width: 100%;
+   height: 100%;
+   border-radius: 40px;
+   padding-left: 35px;
+   outline: none;
+   border: transparent;
+   background: transparent;
+   cursor: pointer;
+}
+.search input:focus {
+   padding-right: 35px;
+}
+
+.search .fa {
+   position: absolute;
+   left: 10px;
+   line-height: 35px;
+   pointer-events: none;
+}
+.topbar svg {
+   fill: black;
+   height: 10px;
+   width: auto;
+}
+.cardBox {
+   position: relative;
+   width: 100%;
+   padding: 20px;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 20px;
+}
+.cardBox .card {
+   position: relative;
+   background: #fff;
+   padding: 20px;
+   display: flex;
+   justify-content: space-between;
+   cursor: pointer;
+}
+.cardBox .card .numbers {
+   position: relative;
+   font-size: 2em;
+   font-weight: 500;
+}
+.cardBox .card .cardName {
+   color: #999;
+}
+.cardBox .card .iconBox {
+   font-size: 2.5em;
+   color: var(--clr-main);
+}
+.details {
+   position: relative;
+   width: 100%;
+   padding: 20px;
+   padding-top: 0;
+   display: grid;
+   grid-gap: 20px;
+   grid-template-columns: 2fr 1fr;
+}
+.details .student {
+   position: relative;
+   min-height: 530px;
+   background: #fff;
+   padding: 20px;
+}
+.cardnav {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+.cardnav h2 {
+   font-weight: 600;
+}
+
+.cardnav .dropdown {
+   position: relative;
+   height: 30px;
+   padding: 0px 40px;
+   box-shadow: inset 0 0 0 2px var(--clr-main);
+   text-align: center;
+   line-height: 30px;
+   z-index: 10;
+   color: var(--clr-main);
+}
+
+.cardnav .dropdown ul {
+   background: inherit;
+   list-style: none;
+   z-index: inherit;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   cursor: pointer;
+   display: none;
+}
+
+.cardnav .dropdown a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.cardnav .dropdown:hover {
+   background: var(--clr-main);
+   color: white;
+}
+.cardnav .dropdown:hover ul {
+   display: block;
+}
+
+.cardnav .dropdown li:hover {
+   background: var(--clr-main-s1-t);
+}
+
+.details table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 10px;
+}
+.details table thead td {
+   font-weight: 600;
+   text-transform: capitalize;
+}
+.details .student table tr {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+   cursor: pointer;
+}
+.details .student table thead tr {
+   pointer-events: none;
+}
+.details .student table tbody tr:last-child {
+   border-bottom: none;
+}
+.details .student table tbody tr:hover {
+   background: var(--clr-main);
+   color: #fff;
+}
+.details .student table tr td {
+   padding: 9px 5px;
+}
+.details .student table thead tr td:last-child,
+.details .student table tbody tr td:last-child {
+   text-align: right;
+}
+.status {
+   position: relative;
+   padding: 2px 4px;
+   color: #fff;
+   border-radius: 4px;
+   font-size: 14px;
+   font-weight: 300;
+   letter-spacing: 1px;
+}
+.registered {
+   background: var(--clr-green);
+}
+.pending {
+   background: var(--clr-yellow);
+}
+.details .recentRegistered {
+   position: relative;
+   min-height: 530px;
+   background: #fff;
+   padding: 20px;
+}
+.details .recentRegistered table tr td h4 span {
+   font-size: 14px;
+   color: #999;
+}
+.details .recentRegistered table tr:hover {
+   background: var(--clr-main);
+   color: #fff;
+}
+.details .recentRegistered table tr:hover span {
+   color: white;
+}
+.details .recentRegistered table tr td {
+   padding: 7px 10px;
+   cursor: pointer;
+}
+.details .recentRegistered table tr td h4 {
+   font-size: 16px;
+   font-weight: 500;
+   line-height: 1.2em;
+}
+/* Now, make it responsive*/
+@media (max-width: 1290px) {
+   .navigation {
+      left: -300px;
+   }
+   .navigation.active {
+      left: 0;
+      width: 300px;
+   }
+   .main {
+      width: 100%;
+      left: 0;
+   }
+   .main.active {
+      width: calc(100% -300px);
+      left: 300px;
+   }
+   .cardBox {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+@media (max-width: 890px) {
+   .details {
+      grid-template-columns: repeat(1, 1fr);
+   }
+   .cardnav h2 {
+      font-weight: 600;
+      font-size: 18px;
+   }
+}
+@media (max-width: 580px) {
+   .cardBox {
+      grid-template-columns: repeat(1, 1fr);
+   }
+   .details .student {
+      overflow-x: auto;
+   }
+   .details .student table {
+      width: 600px;
+   }
+   .navigation {
+      width: 100%;
+      left: -100%;
+      z-index: 1000;
+   }
+   .navigation.active {
+      width: 100%;
+      left: 0;
+   }
+   .toggle.active {
+      position: fixed;
+      z-index: 10000;
+      right: 0;
+      left: initial;
+   }
+   .toggle.active::before {
+      color: #fff;
+   }
+   .main,
+   .main.active {
+      width: 100%;
+      left: 0;
+   }
+}
+
+/*   ---- eman */
+.emptyStudent td:hover {
+   background: pink;
+}
